@@ -19,7 +19,7 @@
         <div class="hero-content">
             <h1>Dinos Are Awesome</h1>
             <p>Do you like dinosaurs? Hit the button below and let's take the count to the moon! (please boop it)</p>
-            <button>Rawr Count 🦖<br> (10)</button>
+            <button onclick="increaseRawr()">Rawr Count 🦖<br><span name="rawrNumber">0</span></button>
         </div>
         <div>
             <img src="imgs/hero image.jpg">
@@ -56,11 +56,24 @@
                 <p>I'm once again asking for your rawr support.</p>
                 <p>Boop it, bop it, beep it. You know you want to. 🦕</p>
             </div>
-            <button>Rawr Count 🦖<br> (10)</button>
+            <button onclick="increaseRawr()">Rawr Count 🦖<br><span name="rawrNumber">0</span></button>
         </div>
     </div>
     <div class="footer">
         <p>Copyright © austernotus 2024</p>
     </div>
+    <script>
+            let currentNumber = 0;
+            let rawrNumbers = [];
+            rawrNumbers = document.getElementsByName("rawrNumber");
+            console.log(rawrNumbers);
+        function increaseRawr(){
+            console.log(currentNumber)
+            currentNumber++;
+            for (let n of rawrNumbers){
+                n.textContent = currentNumber;
+            }
+        }
+    </script>
 </body>
 </html>
